@@ -1,122 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
-            integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link rel="stylesheet" href="./assets/css/base.css" />
-        <link rel="stylesheet" href="./assets/css/main.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-    </head>
-    <body>
-        <div class="main">
-            <!-- Header -->
-            <header class="header">
-                <div class="grid">
-                    <nav class="header__navbar">
-                        <ul class="header__navbar-list">
-                            <li
-                                class="header__navbar-item header__navbar-item--qr header__navbar-item--separate"
-                            >
-                                Vào cửa hàng trên ứng dụng F8-Shop
 
-                                <!-- Header QR code -->
-                                <div class="header__qr">
-                                    <img
-                                        src="./assets/img/maqr.png"
-                                        alt="QR code"
-                                        class="header__qr-img"
-                                    />
-                                    <div class="header__qr-apps">
-                                        <a href="" class="header__qr-link">
-                                            <img
-                                                src="./assets/img/appstore.png"
-                                                alt=""
-                                                class="header__qr-download-img"
-                                            />
-                                        </a>
-                                        <a href="" class="header__qr-link">
-                                            <img
-                                                src="./assets/img/googleplay.png"
-                                                alt=""
-                                                class="header__qr-download-img"
-                                            />
-                                        </a>
-                                    </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+        integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="main">
+        <!-- Header -->
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--qr header__navbar-item--separate">
+                            Vào cửa hàng trên ứng dụng F8-Shop
+
+                            <!-- Header QR code -->
+                            <div class="header__qr">
+                                <img src="./assets/img/maqr.png" alt="QR code" class="header__qr-img" />
+                                <div class="header__qr-apps">
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/appstore.png" alt="" class="header__qr-download-img" />
+                                    </a>
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/googleplay.png" alt="" class="header__qr-download-img" />
+                                    </a>
                                 </div>
-                            </li>
-                            <li class="header__navbar-item">
-                                <span class="header__navbar-title--no-pointer"
-                                    >Kết nối</span
-                                >
-                                <a href="" class="header__navbar-icon-link">
-                                    <i
-                                        class="header__navbar-icon fa-brands fa-facebook"
-                                    ></i>
-                                </a>
-                                <a href="" class="header__navbar-icon-link">
-                                    <i
-                                        class="header__navbar-icon fa-brands fa-instagram"
-                                    ></i>
-                                </a>
-                            </li>
-                        </ul>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-title--no-pointer">Kết nối</span>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
 
-                        <ul class="header__navbar-list">
-                            <li class="header__navbar-item">
-                                <a href="" class="header__navbar-item-link">
-                                    <i
-                                        class="header__navbar-icon fa-sharp fa-solid fa-bell"
-                                    ></i>
-                                    Thông báo
-                                </a>
-                            </li>
-                            <li class="header__navbar-item">
-                                <a href="" class="header__navbar-item-link">
-                                    <i
-                                        class="header__navbar-icon fa-solid fa-circle-question"
-                                    ></i>
-                                    Trợ giúp
-                                </a>
-                            </li>
-                            <li
-                                class="header__navbar-item header__navbar-item--bold header__navbar-item--separate"
-                            >
-                                Đăng ký
-                            </li>
-                            <li
-                                class="header__navbar-item header__navbar-item--bold"
-                            >
-                                Đăng nhập
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--notify">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fa-sharp fa-solid fa-bell"></i>
+                                Thông báo
+                            </a>
+                            <div class="header__notify">
+                                <header class="header__notify-header">
+                                    <h3>Thông Báo Mới Nhận</h3>
+                                </header>
+                                <ul class="header__notify-list">
+                                    <li class="header__notify-item header__notify-item--viewed">
+                                        <a href="" class="header__notify-link">
+                                            <img src="./assets/img/mypham.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-infor">
+                                                <span class="header__notify-name">Xác thực chính hãng nguồn gốc các sản
+                                                    phẩm Ohui</span>
+                                                <span class="header__notify-descriotion">HiddenTag là giải pháp xác thực
+                                                    hàng chính hãng bằng công nghệ tiên tiến nhất hiện nay.</span>
+                                            </div>
+                                        </a>
+                                    </li>
 
-            <div class="container"></div>
+                                    <li class="header__notify-item header__notify-item--viewed">
+                                        <a href="" class="header__notify-link">
+                                            <img src="./assets/img/son.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-infor">
+                                                <span class="header__notify-name">Ohui chính thức ra mắt dòng son lì mới
+                                                    THE FIRST GENITURE LIPSTICK</span>
+                                                <span class="header__notify-descriotion">Một làn môi căng mềm, quyến rũ
+                                                    với sắc màu nổi bật luôn là điều mà các quý cô ao ước.</span>
+                                            </div>
+                                        </a>
+                                    </li>
 
-            <footer class="footer"></footer>
-        </div>
-    </body>
+                                    <li class="header__notify-item header__notify-item--viewed">
+                                        <a href="" class="header__notify-link">
+                                            <img src="./assets/img/kemduongda.jpg" alt="" class="header__notify-img">
+                                            <div class="header__notify-infor">
+                                                <span class="header__notify-name">Sale Sốc bộ dưỡng Ohui The First Tái
+                                                    tạo trẻ hóa da SALE OFF 70%</span>
+                                                <span class="header__notify-descriotion">Giá chỉ còn 375.000 (giá gốc:
+                                                    1.250.000 vnd).</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <footer class="header__notify-footer">
+                                    <a href="" class="header__notify-footer--btn">Xem tất cả</a>
+                                </footer>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item .header__notify-item--viewed">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fa-solid fa-circle-question"></i>
+                                Trợ giúp
+                            </a>
+                        </li>
+                        <li class="header__navbar-item header__navbar-item--bold header__navbar-item--separate">
+                            Đăng ký
+                        </li>
+                        <li class="header__navbar-item header__navbar-item--bold">
+                            Đăng nhập
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container"></div>
+
+        <footer class="footer"></footer>
+    </div>
+</body>
+
 </html>
