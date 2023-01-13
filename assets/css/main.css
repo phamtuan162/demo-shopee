@@ -1,4 +1,10 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateZ(0);
+  z-index: 100;
   height: var(--header-height);
   background-image: linear-gradient(0, #fe6433, #f53e2d);
 }
@@ -10,11 +16,86 @@
   list-style: none;
   padding-left: 0;
   margin: 4px 0 0 0;
+  display: flex;
 }
 .header__navbar-item {
   margin: 0 8px;
   position: relative;
   min-height: 26px;
+}
+.header__navbar-user {
+  display: flex;
+  justify-items: center;
+  position: relative;
+}
+.header__navbar-user:hover .header__navbar-user-menu {
+  display: block;
+}
+.header__navbar-user-img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.header__navbar-user-name {
+  margin-left: 4px;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.header__navbar-user-menu {
+  position: absolute;
+  z-index: 1;
+  padding-left: 0;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 160px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  list-style: none;
+  box-shadow: 0 1px 2px #e0e0e0;
+  display: none;
+}
+
+.header__navbar-user-menu::before {
+  content: "";
+  border-width: 20px 27px;
+  border-style: solid;
+  border-color: transparent transparent var(--white-color) transparent;
+  position: absolute;
+  right: 0;
+  top: -30px;
+  right: 8px;
+}
+.header__navbar-user-menu::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 64%;
+  height: 8px;
+}
+.header__navbar-user-item:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.header__navbar-user-item:last-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.header__navbar-user-item:hover {
+  background-color: #fafafa;
+}
+.header__navbar-user-item a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  padding: 8px 16px;
+  display: block;
+}
+.header__navbar-user-item--separate {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .header__navbar-item--qr:hover .header__qr {
   display: block;
@@ -22,7 +103,7 @@
 .header__navbar-item,
 .header__navbar-item-link {
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--white-color);
   text-decoration: none;
   font-weight: 300;
@@ -30,7 +111,7 @@
 .header__navbar-item,
 .header__navbar-item-link,
 .header__navbar-icon-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
 }
 .header__navbar-item:hover,
@@ -55,6 +136,9 @@
 .header__navbar-icon-link {
   color: var(--white-color);
   text-decoration: none;
+}
+.header__navbar-icon-link:nth-child(2) {
+  margin-left: 3px;
 }
 .header__navbar-icon {
   font-size: 1.8rem;
@@ -105,27 +189,18 @@
 /* Header Notification */
 .header__notify {
   position: absolute;
-  top: 100%;
+  z-index: 1;
+  top: 118%;
   right: 0;
-  border: 1px solid var(--border-color);
-  width: 406px;
+  width: 404px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--white-color);
-  display: none;
   cursor: default;
-  transform-origin: calc(100%-20px) top;
+  transform-origin: calc(100% - 32px) top;
   animation: headerNotifyGrowth ease-in 0.2s;
   will-change: opacity, transform;
-  z-index: 1;
-}
-@keyframes headerNotifyGrowth {
-  from {
-    opacity: 0;
-    transform: scale(0);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  display: none;
 }
 .header__navbar-item--notify:hover .header__notify {
   display: block;
@@ -331,6 +406,10 @@
 .header__logo {
   width: 200px;
 }
+.header__logo-link {
+  text-decoration: none;
+  color: transparent;
+}
 .header__logo-img {
   width: 150px;
 }
@@ -527,7 +606,6 @@
   font-size: 1.4rem;
   color: rgb(131, 131, 131);
   margin: 0 16px 0 8px;
-  position: relative;
   top: 1px;
 }
 .header__search-selection-icon:hover .header__search-option {
@@ -553,7 +631,7 @@
 .header__search-option {
   position: absolute;
   right: 0;
-  top: calc(100% - 1px);
+  top: calc(100% + 2.5px);
   width: 130px;
   list-style: none;
   box-shadow: 0 1px 2px #e0e0e0;
