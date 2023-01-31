@@ -23,6 +23,8 @@ html,
 body {
   scroll-behavior: smooth;
 }
+
+/* Responsive */
 .grid {
   width: 1200px;
   max-width: 100%;
@@ -36,8 +38,20 @@ body {
 .grid__row {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -12px;
+  margin-right: -12px;
 }
-
+/* Test */
+.grid__column-2 {
+  width: 16.6667%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.grid__column-10 {
+  width: 83.3334%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
 /* Animation */
 @keyframes fadeIn {
   from {
