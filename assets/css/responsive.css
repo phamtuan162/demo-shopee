@@ -23,6 +23,12 @@
   .header__sort-bar {
     display: flex;
   }
+  .mobile-category {
+    display: block;
+  }
+  .app__content {
+    padding-top: 8px;
+  }
 }
 
 /* Tablet */
@@ -38,6 +44,10 @@
 
 /* Moblie */
 @media (max-width: 739px) {
+  :root {
+    --header-height: 54px;
+    --navbar-height: 0px;
+  }
   .hide-on-mobile {
     display: none;
   }
@@ -96,7 +106,28 @@
   .app__content {
     margin: 0 4px;
   }
-
+  .header__logo-img {
+    width: 110px;
+  }
+  .footer__content {
+    padding: 0 16px;
+  }
+  .footer__heading {
+    text-align: center;
+  }
+  .footer-item__link {
+    justify-content: center;
+  }
+  .footer__download {
+    justify-content: center;
+  }
+  .footer__download-apps {
+    flex: unset;
+  }
+  .footer__download-app-link {
+    display: block;
+    padding: 6px 8px;
+  }
   @keyframes mobileSearchSideIn {
     from {
       opacity: 0;
