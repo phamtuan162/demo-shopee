@@ -328,7 +328,16 @@
   border: 1px solid #e5e5e5;
 }
 .header__sort-item--active .header__sort-link {
+  position: relative;
   color: var(--primary-color);
+}
+.header__sort-item--active .header__sort-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border: 1px solid var(--primary-color);
 }
 .header__sort-item:first-child .header__sort-link::before {
   border: none;
@@ -853,6 +862,52 @@
 .category-item__link:hover {
   color: var(--primary-color);
 }
+
+/* Mobile category */
+.mobile-category {
+  display: none;
+}
+.mobile-category__list {
+  display: flex;
+  list-style: none;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.mobile-category__list::-webkit-scrollbar {
+  display: none;
+}
+.mobile-category__item {
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+.mobile-category__item:nth-of-type(3n + 1) .mobile-category__link {
+  background-color: #87afd8;
+}
+.mobile-category__item:nth-of-type(3n + 2) .mobile-category__link {
+  background-color: #76c9bd;
+}
+.mobile-category__item:nth-of-type(3n + 3) .mobile-category__link {
+  background-color: #88cf81;
+}
+.mobile-category__link {
+  --line-height: 2rem;
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 1.4rem;
+  line-height: var(--line-height);
+  height: calc(var(--line-height) * 2);
+  text-align: center;
+  width: 110px;
+  padding: 0 6px;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  border-radius: 4px;
+  font-weight: 300;
+  user-select: none;
+  -webkit-user-select: none;
+}
 /* Home sort + filter */
 .home-filter {
   padding: 12px 22px;
@@ -1157,21 +1212,21 @@
   margin: 0 auto;
 }
 .footer__heading {
+  margin-top: 10px;
+  font-weight: 700;
   font-size: 1.4rem;
   text-transform: uppercase;
   color: var(--text-color);
 }
 .footer-list {
   list-style: none;
-  padding-left: 0;
-}
-.footer-item {
+  margin-top: 8px;
 }
 .footer-item__link {
   text-decoration: none;
   font-size: 1.2rem;
   color: #737373;
-  padding: 2px 0;
+  padding: 6px 0;
   display: flex;
   align-items: center;
 }
@@ -1183,6 +1238,7 @@
   margin: -1px 8px 0 0;
 }
 .footer__download {
+  margin-top: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
