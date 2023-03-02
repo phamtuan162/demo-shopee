@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
         integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -23,8 +26,8 @@
     <div class="main">
         <!-- Header -->
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--qr header__navbar-item--separate">
                             Vào cửa hàng trên ứng dụng F8-Shop
@@ -141,7 +144,10 @@
 
                 <!-- Header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <label for="mobile-search-checkbox" class="header__mobile-search">
+                        <i class="header__mobile-search--icon fas fa-search"></i>
+                    </label>
+                    <div class="header__logo hide-on-tablet">
                         <a href="/" class="header__logo-link">
                             <svg class="header__logo-img" viewBox="0 0 192 65">
                                 <g fill-rule="evenodd">
@@ -152,41 +158,46 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="header__search">
-                        <div class="header__search-input-wrap">
-                            <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
-                            <div class="header__search-history">
-                                <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
-                                <ul class="header__search-history-list">
-                                    <li class="header__search-history-item">
-                                        <a href="">Kem dưỡng da</a>
+
+                    <input type="checkbox" name="" id="mobile-search-checkbox" class="header__search-checkbox">
+                    <div class="header__search hide-on-mobile">
+                        <div class="header__search-container">
+                            <div class="header__search-input-wrap">
+                                <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
+                                <div class="header__search-history">
+                                    <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+                                    <ul class="header__search-history-list">
+                                        <li class="header__search-history-item">
+                                            <a href="">Kem dưỡng da</a>
+                                        </li>
+                                        <li class="header__search-history-item">
+                                            <a href="">Kem trị mụn</a>
+                                        </li>
+                                        <li class="header__search-history-item">
+                                            <a href="">Kem chống nắng </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="header__search-selection">
+                                <span class="header__search-selection-label">Trong shop</span>
+                                <i class="header__search-selection-icon fa-sharp fa-solid fa-chevron-down"></i>
+                                <ul class="header__search-option">
+                                    <li class="header__search-option-item header__search-option-item-active ">
+                                        <span>Trong shop</span>
+                                        <i class=" header__search-option-active fa-solid fa-check"></i>
                                     </li>
-                                    <li class="header__search-history-item">
-                                        <a href="">Kem trị mụn</a>
-                                    </li>
-                                    <li class="header__search-history-item">
-                                        <a href="">Kem chống nắng </a>
+                                    <li class="header__search-option-item">
+                                        <span>Ngoài shop</span>
+                                        <i class=" fa-solid fa-check"></i>
                                     </li>
                                 </ul>
                             </div>
+                            <button class="header__search-btn">
+                                <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                            </button>
                         </div>
-                        <div class="header__search-selection">
-                            <span class="header__search-selection-label">Trong shop</span>
-                            <i class="header__search-selection-icon fa-sharp fa-solid fa-chevron-down"></i>
-                            <ul class="header__search-option">
-                                <li class="header__search-option-item header__search-option-item-active ">
-                                    <span>Trong shop</span>
-                                    <i class=" header__search-option-active fa-solid fa-check"></i>
-                                </li>
-                                <li class="header__search-option-item">
-                                    <span>Ngoài shop</span>
-                                    <i class=" fa-solid fa-check"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <button class="header__search-btn">
-                            <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
-                        </button>
+
                     </div>
 
                     <!-- Cart layout -->
@@ -275,12 +286,26 @@
 
                 </div>
             </div>
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
         </header>
 
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <h3 class="category__heading">
                                 Danh mục
@@ -299,8 +324,8 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">Sắp xếp theo</span>
                             <button class="btn">Phổ biến</button>
                             <button class="btn btn--primary">Mới nhất</button>
@@ -339,9 +364,9 @@
 
                         <div class="home-product">
                             <!-- Grid > Row > Column -->
-                            <div class="grid__row">
+                            <div class="row sm-gutter">
                                 <!-- Product item -->
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6 ">
                                     <a class="home-product--item">
                                         <div class="home-product--item__img"
                                             style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-lx7t1mneqhkv9e);">
@@ -380,7 +405,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6 ">
                                     <a class="home-product--item">
                                         <div class="home-product--item__img"
                                             style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-lx7t1mneqhkv9e);">
@@ -419,7 +444,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6 ">
                                     <a class="home-product--item">
                                         <div class="home-product--item__img"
                                             style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-lx7t1mneqhkv9e);">
@@ -458,7 +483,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6 ">
                                     <a class="home-product--item">
                                         <div class="home-product--item__img"
                                             style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-lx7t1mneqhkv9e);">
@@ -497,7 +522,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6 ">
                                     <a class="home-product--item">
                                         <div class="home-product--item__img"
                                             style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-lx7t1mneqhkv9e);">
@@ -536,7 +561,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6 ">
                                     <a class="home-product--item">
                                         <div class="home-product--item__img"
                                             style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-lx7t1mneqhkv9e);">
@@ -575,7 +600,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6 ">
                                     <a class="home-product--item">
                                         <div class="home-product--item__img"
                                             style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-lx7t1mneqhkv9e);">
@@ -614,7 +639,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6 ">
                                     <a class="home-product--item">
                                         <div class="home-product--item__img"
                                             style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-lx7t1mneqhkv9e);">
@@ -653,7 +678,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6 ">
                                     <a class="home-product--item">
                                         <div class="home-product--item__img"
                                             style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-lx7t1mneqhkv9e);">
@@ -692,7 +717,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6 ">
                                     <a class="home-product--item">
                                         <div class="home-product--item__img"
                                             style="background-image: url(https://cf.shopee.vn/file/sg-11134201-22110-lx7t1mneqhkv9e);">
@@ -774,8 +799,8 @@
 
         <footer class="footer">
             <div class="grid wide footer__content">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -789,7 +814,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Giới thiệu</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -802,7 +827,7 @@
                                 <a href="" class="footer-item__link">Điều khoản</a>
                             </li>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Danh mục</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -815,7 +840,7 @@
                                 <a href="" class="footer-item__link">Trang điểm mắt</a>
                             </li>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Theo dõi</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -834,7 +859,7 @@
                                 </a>
                             </li>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Vào cửa hàng trên ứng dựng</h3>
                         <div class="footer__download">
                             <img src="./assets/img/maqr.png" alt="Download QR" class="footer__download-qr">

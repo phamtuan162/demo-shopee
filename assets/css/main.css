@@ -1,13 +1,13 @@
+.main {
+  overflow: hidden;
+}
+/* Header */
 .header {
-  /* position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  transform: translateZ(0); */
   z-index: 100;
-  position: sticky;
-  top: -5px;
-  padding-top: 5px;
   height: var(--header-height);
   background-image: linear-gradient(0, #fe6433, #f53e2d);
 }
@@ -291,6 +291,48 @@
   font-weight: 500;
   text-align: center;
 }
+/* Header sort bar */
+.header__sort-bar {
+  position: fixed;
+  top: var(--header-height);
+  right: 0;
+  left: 0;
+  height: var(--header-sort-bar-height);
+  background-color: var(--white-color);
+  list-style: none;
+  border-style: solid;
+  border-color: #e5e5e5;
+  border-width: 1px 0;
+  display: none;
+}
+.header__sort-item {
+  flex: 1;
+}
+.header__sort-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  display: block;
+  height: 100%;
+  line-height: var(--header-sort-bar-height);
+  text-align: center;
+  position: relative;
+}
+.header__sort-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 60%;
+  border: 1px solid #e5e5e5;
+}
+.header__sort-item--active .header__sort-link {
+  color: var(--primary-color);
+}
+.header__sort-item:first-child .header__sort-link::before {
+  border: none;
+}
 /* Authen modal */
 .auth-form {
   background-color: var(--white-color);
@@ -408,23 +450,42 @@
   align-items: center;
   height: var(--header-with-search);
 }
+.header__mobile-search {
+  padding: 0 12px;
+  display: none;
+}
+.header__mobile-search--icon {
+  font-size: 2.6rem;
+  color: var(--white-color);
+}
 .header__logo {
   width: 200px;
 }
 .header__logo-link {
   text-decoration: none;
   color: transparent;
+  display: block;
 }
 .header__logo-img {
   width: 150px;
 }
+.header__search-checkbox {
+  display: none;
+}
+.header__search-checkbox:checked ~ .header__search {
+  display: flex;
+}
 .header__search {
-  flex: 1;
   border-radius: 2px;
   height: 40px;
   background-color: var(--white-color);
+  flex: 1;
+  display: flex;
+}
+.header__search-container {
   display: flex;
   align-items: center;
+  flex: 1;
 }
 .header__cart {
   display: flex;
@@ -470,7 +531,7 @@
 .header__cart-list-item {
   padding-left: 0;
   list-style: none;
-  height: 35vh;
+  max-height: 35vh;
   overflow-y: auto;
 }
 .header__cart-item {
@@ -648,7 +709,7 @@
 .header__search-option {
   position: absolute;
   right: 0;
-  top: calc(100% + 3.5px);
+  top: calc(100% + 14px);
   width: 130px;
   list-style: none;
   box-shadow: 0 1px 2px #e0e0e0;
@@ -704,7 +765,7 @@
 /* Search history */
 .header__search-history {
   position: absolute;
-  top: calc(100% + 2px);
+  top: calc(100% + 1px);
   left: 0;
   width: calc(100% - 16px);
   background-color: var(--white-color);
@@ -743,6 +804,7 @@
 /* App container */
 .app__container {
   background-color: #f5f5f5;
+  margin-top: var(--header-height);
 }
 .app__content {
   padding-top: 36px;
@@ -937,6 +999,7 @@
 .home-product--item__price {
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
 }
 .home-product--item__price-old {
   margin-left: 10px;
